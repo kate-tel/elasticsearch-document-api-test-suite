@@ -49,45 +49,46 @@ You now have a single-node Elasticsearch cluster up and running!
 3. Create a new virtual environment
 
 Create a directory to neatly store the Test Suite in it.
-```
-$ mkdir <directory_name>
-$ cd <directory_name>
 
-```Create a virtual environment inside the folder.
-```
-$ python3 -m venv env
+`$ mkdir <directory_name>`
+`$ cd <directory_name>`
 
-```
+
+Create a virtual environment inside the folder.
+
+`$ python3 -m venv env`
+
+
 To activate a virtual environment, run from command line:
-```
-$ source env/bin/activate
-```
+
+`$ source env/bin/activate`
+
 To deactivate:
-```
-$ deactivate
-```
+
+`$ deactivate`
+
 
 4. Install Python Elasticsearch Client
 
 Official low-level client for Elasticsearch. Its goal is to provide common ground for all Elasticsearch-related code in Python. Official documentation can be found [here](https://elasticsearch-py.readthedocs.io/en/master/index.html#).
 
 Installation:
-```
-$ python -m pip install elasticsearch
-```
+
+`$ python -m pip install elasticsearch`
+
 
 5. Clone git repository
 
-```
-$ git clone https://github.com/kate-tel/elasticsearch-document-api-test-suite.git
 
-```
+`$ git clone https://github.com/kate-tel/elasticsearch-document-api-test-suite.git`
+
+
 This will create a folder `elasticsearch-document-api-test-suite` on your machine.
 
 6. Run TS:
     - from the command line:
-```
-        $ python -m unittest elasticsearch-document-api-test-suite/tests_es_py.py
 
-```    
+        `$ python -m unittest elasticsearch-document-api-test-suite/tests_es_py.py`
+
+   
     - or run in the Preferred Code editor (Sublime Text, Visual Studio Code etc.)
