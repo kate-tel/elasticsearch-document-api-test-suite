@@ -125,6 +125,23 @@ class ElDocumentAPITest(unittest.TestCase):
         )['found'],
         True)
 
+    def test_exists_doc(self):
+        '''Check that the specified JSON document exists in an index'''
+        self.es.index(
+            index='twitter',
+            id = 1, 
+            body={
+                "user": "kimchy", 
+                "twits": "1"
+                }
+            )
+        self.assertEqual(
+            self.es.exists(
+                index='twitter',
+                id = 1
+        ),
+        True)
+
     def test_doc_not_found(self):
         '''Check that NotFoundError is returned if the requested document doesn't exist in an index'''
         self.es.index(
