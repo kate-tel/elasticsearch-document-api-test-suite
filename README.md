@@ -17,20 +17,20 @@ This test suite perfoms functional testing for [ElasticSearch Document API 7.7.0
 
 CRUD APIs covered by this test suite:
 
-    Single document APIs
+Single document APIs
 
-    * Index
-    * Get
-    * Delete
-    * Update
-    
-    Multi-document APIs
+* Index
+* Get
+* Delete
+* Update
 
-    * Multi get
-    * Bulk
-    * Delete by query
-    * Update by query API
-    * Reindex
+Multi-document APIs
+
+* Multi get
+* Bulk
+* Delete by query
+* Update by query API
+* Reindex
 
 ### **Prerequisites**
 
