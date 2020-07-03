@@ -46,35 +46,46 @@ You now have a single-node Elasticsearch cluster up and running!
 
 2. Clone this repository and go to folder
 
-`git clone https://github.com/kate-tel/elasticsearch-document-api-test-suite.git`
-
-`cd elasticsearch-document-api-test-suite`
+```bash
+git clone https://github.com/kate-tel/elasticsearch-document-api-test-suite.git
+cd elasticsearch-document-api-test-suite
+```
 
 3. Install virtualenv
 
-`pip3 install -U pip`
-`pip3 install virtualenv`
+```bash
+pip3 install -U pip
+pip3 install virtualenv
+```
 
 4. Create & activate virtual env
 
-`virtualenv .venv`
-`source .venv/bin/activate`
+```bash
+virtualenv .venv
+source .venv/bin/activate
+```
 
 5. Install requirements. 
 
 As a result, Python Elasticsearch Client 7.8.0 will be installed.
 
-`pip3 install -r requirements.txt`
+```bash
+pip3 install -r requirements.txt
+```
 
 ### **Running the tests**
 
-To run the tests from the command line:
+1. To run the tests from the command line:
 
-`python -m unittest tests_es_py.py`
+```bash
+python -m unittest tests_es_py.py
+```
 
-To run individual test methods:
+2. To run individual test methods:
 
-`python -m unittest tests_es_py.ElDocumentAPITest.test_create_doc_with_id`
+```bash
+python -m unittest tests_es_py.ElDocumentAPITest.test_create_doc_with_id
+```
 
 ### **References**
 
