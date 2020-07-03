@@ -1,10 +1,21 @@
-**ElasticSearch Document API test suite using Python Elasticsearch Client**
+## **Elasticsearch Document API functional testing**
 
-This test suite perfoms functional testing for ElasticSearch Document API, which can be found [here](https://www.elastic.co/guide/en/elasticsearch/reference/current/docs.html). Elasticsearch is the distributed search and analytics engine for all types of data.
+### **Table of Contents**
 
-**About this Test Suite**
+* [About this Project](#about-this-project)
+* [Test coverage](#test-coverage)
+* [Prerequisites](#prerequisites)
+* [Setup of testing environment](#setup-of-testing-environment)
+* [Running the tests](#running-the-tests)
+* [References](#references)
 
-In this test suite I performed funtional testing of the following CRUD APIs:
+### **About this Project**
+
+This test suite perfoms functional testing for [ElasticSearch Document API 7.7.0](https://www.elastic.co/guide/en/elasticsearch/reference/7.7/docs.html).
+
+### **Test coverage**
+
+CRUD APIs covered by this test suite:
 
     Single document APIs
 
@@ -21,74 +32,54 @@ In this test suite I performed funtional testing of the following CRUD APIs:
     * Update by query API
     * Reindex
 
-To make Api calls using Python I used Python Elasticsearch Client 7.7.1 (Official low-level client for Elasticsearch).
+### **Prerequisites**
 
-Note:
-Python Elasticsearch Client's `exists_source` object isn't included in the test suite due to bug.
-This issue has been reported by me, see [issue](https://github.com/elastic/elasticsearch-py/issues/1270). The bug has been fixed on 03/06/2020, but hasn't been released yet (as of 05/06/2020). 
+1. [Python 3](https://www.python.org/downloads/)
 
-**Infranstructure**
+### **Setup of testing environment**
 
-1. Python 3
-2. One-node Elasticsearch 7.7.0. cluster, running locally on machine.
-3. Virtual environment.
-4. Python Elasticsearch Client.
+1. Run Elasticsearch locally
 
-**Environment Setup**
-
-1. Install Python 3
-
-Detailed installation guide for various opeartion systems can be found [here](https://realpython.com/installing-python/).
-
-2. Run Elasticsearch (ES) locally on your computer
-
-Explicit guideline on ES installation can be found [here](https://www.elastic.co/guide/en/elasticsearch/reference/current/getting-started-install.html#run-elasticsearch-local). 
-For the purpose of running the Test Suite (TS) one-node cluster is enough. Follow steps 1-3. 
+This project is tested with Elasticsearch 7.7.0. Set up instructions can be found [here](https://www.elastic.co/guide/en/elasticsearch/reference/7.7/getting-started-install.html#run-elasticsearch-local).
+For the purpose of running the test suite one-node cluster is enough. Follow steps 1-3. 
 You now have a single-node Elasticsearch cluster up and running!
 
-3. Create a new virtual environment
+2. Clone this repository and go to folder
 
-Create a directory to neatly store the Test Suite in it.
+`git clone https://github.com/kate-tel/elasticsearch-document-api-test-suite.git`
 
-`$ mkdir <directory_name>`
-`$ cd <directory_name>`
+`cd elasticsearch-document-api-test-suite`
 
+3. Install virtualenv
 
-Create a virtual environment inside the folder.
+`pip3 install -U pip`
+`pip3 install virtualenv`
 
-`$ python3 -m venv env`
+4. Create & activate virtual env
 
+`virtualenv .venv`
+`source .venv/bin/activate`
 
-To activate a virtual environment, run from command line:
+5. Install requirements. 
 
-`$ source env/bin/activate`
+As a result, Python Elasticsearch Client 7.8.0 will be installed.
 
-To deactivate:
+`pip3 install -r requirements.txt`
 
-`$ deactivate`
+### **Running the tests**
 
+To run the tests from the command line:
 
-4. Install Python Elasticsearch Client
+`python -m unittest tests_es_py.py`
 
-Official low-level client for Elasticsearch. Its goal is to provide common ground for all Elasticsearch-related code in Python. Official documentation can be found [here](https://elasticsearch-py.readthedocs.io/en/master/index.html#).
+To run individual test methods:
 
-Installation:
+`python -m unittest tests_es_py.ElDocumentAPITest.test_create_doc_with_id`
 
-`$ python -m pip install elasticsearch`
+### **References**
 
+1. [Elasticsearch Document API documentation version 7.7.0](https://www.elastic.co/guide/en/elasticsearch/reference/7.7/docs.html).
 
-5. Clone git repository
+2. [Python Elasticsearch Client API documentation](https://elasticsearch-py.readthedocs.io/en/master/api.html).
 
-
-`$ git clone https://github.com/kate-tel/elasticsearch-document-api-test-suite.git`
-
-
-This will create a folder `elasticsearch-document-api-test-suite` on your machine.
-
-6. Run TS:
-    - from the command line:
-
-        `$ python -m unittest elasticsearch-document-api-test-suite/tests_es_py.py`
-
-   
-    - or run in the Preferred Code editor (Sublime Text, Visual Studio Code etc.)
+3. [Unittest Command-line interface for running the tests](https://docs.python.org/3/library/unittest.html#command-line-interface)
